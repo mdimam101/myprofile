@@ -6,6 +6,8 @@ import styled from "styled-components";
 import { Icon } from "@iconify/react";
 // Media
 import Logo from "../images/logo.svg";
+
+import pic2023 from "../images/pic2023.jpg";
 import { Light, Dark } from "../data";
 // Components
 import { Col, Container, Row } from "react-bootstrap";
@@ -44,8 +46,8 @@ const StyledHero = styled.header`
     height: 100%;
     background: ${({ theme }) =>
       theme.name === "light"
-        ? "rgba(255, 255, 255, 0.2)"
-        : "rgba(0, 0, 0, 0.2)"};
+        ? `url(${Dark}) top center fixed no-repeat`
+        : `url(${Dark}) top center fixed no-repeat`};
     z-index: -1;
   }
 
@@ -89,25 +91,32 @@ export default function Hero() {
         <Row className="align-items-center text-center">
           <Col>
             <h1 className="mb-3 display-3 title">{name}</h1>
+            <h2>Hi!</h2>
+            <h2>I am Imam</h2>
             <div className="d-flex align-items-center justify-content-center">
-              <SocialLinks />
+              {/* <SocialLinks /> */}
+              <img 
+              src = {pic2023}
+              style={{borderRadius:180}}
+              className="w-75 mx-auto"
+              />
             </div>
           </Col>
-          <Col className="d-none d-md-block">
+          {/* <Col className="d-none d-md-block">
             <img
               src={Logo}
               alt="React Logo"
               className="w-75 mx-auto hero-img"
             />
-          </Col>
+          </Col> */}
         </Row>
-        <Row className="align-items-end down-container">
+        {/* <Row className="align-items-end down-container">
           <Col className="m-4 text-center">
             <Link to={"About"} className="link-icons">
               <Icon icon="fa6-solid:circle-chevron-down" />
             </Link>
           </Col>
-        </Row>
+        </Row> */}
       </Container>
     </StyledHero>
   );
